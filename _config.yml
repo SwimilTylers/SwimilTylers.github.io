@@ -1,5 +1,5 @@
 # Site settings
-title: Whisper of Swimiltylers
+title: Event Horizon
 SEOTitle: 杨一江的博客 | Yi-Jiang Yang Blog
 header-img: img/home-bg.jpg
 email: swimiltylers@gmail.com
@@ -53,7 +53,7 @@ kramdown:
 
 
 # Disqus settings
-disqus_username: hux
+disqus_username: swimiltylers
 
 # Netease settings
 netease_comment: false
@@ -66,7 +66,7 @@ netease_comment: false
 
 # Google Analytics
 ga_track_id: 'UA-125889251-1'            # Format: UA-xxxxxx-xx
-ga_domain: github.io
+ga_domain: swimiltylers.github.io
 
 
 
