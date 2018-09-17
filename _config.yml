@@ -65,8 +65,8 @@ netease_comment: false
 # ba_track_id: [your track id]
 
 # Google Analytics
-#ga_track_id: 'UA-125889251-1'            # Format: UA-xxxxxx-xx
-#ga_domain: github.io
+ga_track_id: 'UA-125889251-1'            # Format: UA-xxxxxx-xx
+ga_domain: github.io
 
 
 
