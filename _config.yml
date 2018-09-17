@@ -14,7 +14,7 @@ future: true
 # SNS settings
 RSS: false
 #weibo_username:     swimiltylers
-#zhihu_username:     yang-yi-jiang-40
+zhihu_username:     yang-yi-jiang-40
 github_username:    swimiltylers
 twitter_username:   swimiltylers
 facebook_username:  swimiltylers
@@ -65,8 +65,8 @@ netease_comment: false
 # ba_track_id: [your track id]
 
 # Google Analytics
-ga_track_id: 'UA-125889251-1'            # Format: UA-xxxxxx-xx
-ga_domain: github.io
+#ga_track_id: 'UA-125889251-1'            # Format: UA-xxxxxx-xx
+#ga_domain: github.io
 
 
 
