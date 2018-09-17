@@ -70,7 +70,7 @@ Procedure LayeredBFS
 End Procedure
 ```
 
-## Local Synchronization: Building Alpha Synchronizer
+## Local Sync: Building Alpha Synchronizer
 
 __Inspiration__: Layering algorithm needs a global permission to continue propagation,  which is too costly. Instead, that each node at distance $d$ delays sending out a recruiting message until it has confirmed that none of its neighbors will sending it a smaller distance is a better option.
 

@@ -7,6 +7,7 @@ author:     "swimiltylers"
 header-img: "img/home-bg-o.jpg"
 tags:
     - Distributed Algorithm
+    - Synchronize
     - logical clock
     - Lamport
     - Neiger-Toueg-Welch
@@ -31,7 +32,7 @@ __causal shuffle__: causal shuffle of a schedule $S$ is a permutation of $S$ tha
 ___Lemma 1___: Let $S'$ be a permutation of the events in $S$. Then, the following statements are equivalent:
 
  	1. $S'$ is a causal shuffle of $S$ 
-		2. $S'$ is the schedule of an execution fragment of a message-passing system with $\forall p\rightarrow S|p=S'|p$
+	2. $S'$ is the schedule of an execution fragment of a message-passing system with $\forall p\rightarrow S|p=S'|p$
 
 In general, we will have a relation $<_L$ between timestamps such that $e\Rightarrow_S e'$ implies $e<_L e'$, but it may be that there are some pairs of events that are ordered by the logical clock despite being incomparable in the happens-before relation.
 
@@ -61,7 +62,7 @@ Vector clock满足如下的性质
 
 $$\forall e,e',i,\rightarrow \left(VC(e)_i \leq VC(e')_i\;\Leftrightarrow \;e\Rightarrow_S e'\right)$$
 
-##Applications
+## Applications
 
 ### Consistent snapshot
 

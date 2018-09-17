@@ -64,7 +64,7 @@ while (true){
 }
 ```
 
-###Read-Modify-Write Registers
+### Read-Modify-Write Registers
 
 上述的算法无法保证lockout-free，为了确保这种特性，我们需要一个可以支持原则操作的共享队列(_atomic shared queue_)。再尝试阶段的时候，每个处理器将自己加入(_enqueue_)这个共享队列的尾部。对于这个队列来说，每次去取其头部的处理器，允许他进入保护阶段，而对于其他处理器来说就需要不停的访问队列是否轮到了他（这个方式叫做_spinning_）当一个进入保护阶段的处理器退出的时候，队列也随之弹出(_dequeue_)
 
@@ -102,7 +102,7 @@ There is an improvement in reducing space complexity of the shared queue, that i
 + _mutual exclusion_：只有队列的头部的处理器能够进入critical section，并且他一直停留在队列的头部直到他离开critical section，因此防止其他处理器进入critical section
 + _no deadlock_ and _no lockout_：先进先出(FIFO)的进队顺序加上处理器不会用就呆在critical section的假设，因此不会有人无法进入critical section，避免了了饥饿(_starvation_)，继而避免了死锁
 
-###Local Spinning RMW Registers
+### Local Spinning RMW Registers
 
 之前的算法需要一直访问__单个__变量来确定是否能够进入critical section。这种方法叫做_spinning_，但是这种方式增加了访问shared memory的时间消耗，因此，本算法让不同的处理器去_spinning_访问__不同__的变量，这个算法需要的空间开销是$O(n)$，使得$n$个处理器能够同时_spinning_减少时间开销
 

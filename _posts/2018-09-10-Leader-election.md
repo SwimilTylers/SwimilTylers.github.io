@@ -28,7 +28,7 @@ tags:
 - __Symmetry Breaking__: 偏离初始对称配置的message-passing system。打破对称性可以通过让每个节点进行随机选择，以一定的概率打破原先的对称性配置，但是这种方法不能保证收敛到唯一一个leader；或者为每个节点设置身份标识，只需申明身份就能打破对称性。
 - ___Lemma 1.1___ : A symmetric deterministic message-passing system that starts in an initial configuration in which equivalent processes have the same state has a synchronous execution in which equivalent processes continue to have the same state.
 
-##The Le-Lann-Chang-Roberts Algorithm
+## The Le-Lann-Chang-Roberts Algorithm
 
 __Configuration__: unidirectional ring, nodes with identities, not necessarily synchronous
 
