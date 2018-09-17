@@ -36,9 +36,9 @@ tags:
   + 我们选择$\rho'$的一个有穷前缀$\rho$，在$exec(C, \tau_0\tau_1\dots\tau_i\rho)$中$p_\ell$进入critical section区域$k+1$次（注意，此时仍然满足$k$-bounded waiting）。由于对于$p_0,p_1,\dots p_i$而言$C_i\sim C_j$，并且$\rho$本身就是$\{p_0,\dots p_i\}$-only的，因此$p_\ell$在$exec(C_j,\rho)$仍然是进入了$k+1$次
   + 在$C_j$施加一个调度$\sigma$，该调度只包含了$p_0$到$p_j$的无限步操作。因为$p_0$到$p_j$进行了无限步步骤而剩余的处理器依然在剩余阶段，因此$exec(C, \tau_0\tau_1\dots\tau_i\rho\sigma)$本身是admissible。但是在执行片段$\rho$中，$p_j$一直在尝试阶段而$p_\ell$已经进入critical section中$k+1$次，违反了$k$-bounded waiting的特性。因此，共享内存至少存在$n$个不同的状态
 
-##Mutual exclusion using strong primitives
+## Mutual exclusion using strong primitives
 
-###Stronger Atomic Operations
+### Stronger Atomic Operations
 
 + __read-modify-write__ register: RMW operation computes a new value based on the old one and write the new one back as a single atomic operation, usually returning the old value to the caller as well.
 
@@ -104,7 +104,7 @@ There is an improvement in reducing space complexity of the shared queue, that i
 
 ### Local Spinning RMW Registers
 
-之前的算法需要一直访问__单个__变量来确定是否能够进入critical section。这种方法叫做_spinning_，但是这种方式增加了访问shared memory的时间消耗，因此，本算法让不同的处理器去_spinning_访问__不同__的变量，这个算法需要的空间开销是$O(n)$，使得$n$个处理器能够同时_spinning_减少时间开销
+之前的算法需要一直访问 __单个__ 变量来确定是否能够进入critical section。这种方法叫做 _spinning_ ，但是这种方式增加了访问shared memory的时间消耗，因此，本算法让不同的处理器去 _spinning_ 访问 __不同__ 的变量，这个算法需要的空间开销是$O(n)$，使得$n$个处理器能够同时 _spinning_ 减少时间开销
 
 ```pseudocode
 Initially _Last_ = 0, _Flags_[0] = __has_lock__, _Flag_[i] = __must_wait__ for other i
