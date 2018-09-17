@@ -3,7 +3,7 @@ title: Whisper of Swimiltylers
 SEOTitle: 杨一江的博客 | Yi-Jiang Yang Blog
 header-img: img/home-bg.jpg
 email: swimiltylers@gmail.com
-description: "关于前端与设计、黑客与画家 | 黄玄，Web & Mobile Lover，Software Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界"
+description: "南京大学计算机科学与技术系本科生 | 杨一江，Food Lover，Undergraduate of NJU，interested in Distributed Algorithms | 这里是 @swimiltylers 的个人博客，与你一起发现更大的世界"
 keyword: "杨一江, Swimiltylers, yangyj, @swimiltylers, 杨一江的博客, Yi-Jiang Yang Blog, 博客, 个人网站, 分布式算法, Distributed Algorithm, 形式语义, Coq"
 url: "https://swimiltylers.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
@@ -14,7 +14,7 @@ future: true
 # SNS settings
 RSS: false
 #weibo_username:     swimiltylers
-zhihu_username:     swimiltylers
+zhihu_username:     yang-yi-jiang-40
 github_username:    swimiltylers
 twitter_username:   swimiltylers
 facebook_username:  swimiltylers
@@ -65,8 +65,8 @@ netease_comment: false
 # ba_track_id: [your track id]
 
 # Google Analytics
-# ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
-# ga_domain: huangxuan.me
+ga_track_id: 'UA-125889251-1'            # Format: UA-xxxxxx-xx
+ga_domain: github.io
 
 
 
