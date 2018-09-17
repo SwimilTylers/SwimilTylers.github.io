@@ -1,5 +1,6 @@
 ---
 layout:     post
+mathjax:  true
 title:      "Distributed Algorithm Basics (VI) - Scenario: Mutual Exclusion"
 subtitle:   "Notes on DA study"
 date:       2018-09-17 21:18:00
