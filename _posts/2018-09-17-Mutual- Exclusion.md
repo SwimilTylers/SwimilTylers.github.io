@@ -32,7 +32,7 @@ tags:
 + 互斥算法如果能满足在每一个执行中，没有一个处理器能够在其他处理器仍然在尝试阶段的时候进入critical section超过$k$次，那么该算法能够保证$k$-bounded waiting
 + 如果所有的处理器都进入了剩余阶段，那么互斥算法的配置就陷入沉寂(_quiescent_)
 + 如果一个互斥算法能保证no deadlock和$k$-bounded waiting特性，那么这个算法的共享内存需要至少$n$个不同的状态 ：
-  + 记$C$是该算法的初始配置，目前该算法是沉寂的。让$\tau_0 '$是一个无限的$p_0$-only的调度，由于$exec(C,\tau_0')$是满足admissible的特性，那么存在一个$\tau_0'$的有穷前缀$\tau_0$使得$p_0$处在保护阶段$C_0=\tau_0\left(C\right)$，相似的为其他处理器构建$p_i$-only的调度使得$p_i$处在尝试阶段$C_i=\tau_i\left(C_{i-1}\right)$得到$C_{n-1}=\tau_0\tau_1\dots\tau_{n-1}\left(C\right)$
+  + 记$C$是该算法的初始配置，目前该算法是沉寂的。让$\tau_0'$是一个无限的$p_0$-only的调度，由于$exec(C,\tau_0')$是满足admissible的特性，那么存在一个$\tau_0'$的有穷前缀$\tau_0$使得$p_0$处在保护阶段$C_0=\tau_0\left(C\right)$，相似的为其他处理器构建$p_i$-only的调度使得$p_i$处在尝试阶段$C_i=\tau_i\left(C_{i-1}\right)$得到$C_{n-1}=\tau_0\tau_1\dots\tau_{n-1}\left(C\right)$
   + 我们假设共享内存只需要严格小于$n$个不同的状态，那么根据鸽笼原理，存在两个不同的状态$C_i,C_j,\,0\leq i<j\leq n-1$的共享内存的状态是完全一致的，也就是说对于没有在$\tau_{i+1},\dots,\tau_j$执行中进行操作的处理器$p_0,\dots,p_i$（$\tau_i$是$p_i$-only调度）来说，$C_i\sim C_j$
   + 在$C_i$施加一个调度$\rho'$，该调度只包含了$p_0$到$p_i$的无限步操作。因为$exec(C, \tau_0\tau_1\dots\tau_i\rho')$本身是admissible，并由无死锁特性推出，某一个处理器$p_\ell,\,0\leq\ell\leq i$曾经进入critical section无数次
   + 我们选择$\rho'$的一个有穷前缀$\rho$，在$exec(C, \tau_0\tau_1\dots\tau_i\rho)$中$p_\ell$进入critical section区域$k+1$次（注意，此时仍然满足$k$-bounded waiting）。由于对于$p_0,p_1,\dots p_i$而言$C_i\sim C_j$，并且$\rho$本身就是$\{p_0,\dots p_i\}$-only的，因此$p_\ell$在$exec(C_j,\rho)$仍然是进入了$k+1$次
