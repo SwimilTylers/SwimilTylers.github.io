@@ -25,6 +25,7 @@ tags:
 | Asynchronous message-passing model | computation step & delivery step | message complexity & time complexity | 1) each processor has an infinite number of computation events; 2) every message sent is eventually delivered |
 | Synchronous message-passing model  | computation step & delivery step | message complexity & time complexity | infinite execution                                           |
 
+---
 ## Message-passing system
 
 - 每个双向通道(_channel_)连接两个处理器(_processor_)，所有通道的分布模式构成了这个系统的拓扑结构(_topology_)，通常用无向图表示，这些通道的总和就是网络(_network_)
@@ -72,6 +73,7 @@ tags:
   + 整个执行的时间起点为0并且不会下降，无限执行的时间的增长不存在上限
   + 对于每个处理器都是严格单增的
 
+---
 ## Shared memory system
 
 + $n$ processors + $m$ registers $\Rightarrow$ __no__ $inbuf$ or $outbuf$
