@@ -76,7 +76,7 @@ End Procedure
 
 __Inspiration__: Layering algorithm needs a global permission to continue propagation,  which is too costly. Instead, that each node at distance $d$ delays sending out a recruiting message until it has confirmed that none of its neighbors will sending it a smaller distance is a better option.
 
-__Complexity__: $O(|E|\bullet D)$ messages and $O(D)$ time
+__Complexity__: $O(\mid E\mid\bullet D)$ messages and $O(D)$ time
 
 ```pseudocode
 Class node:

@@ -37,7 +37,7 @@ tags:
 
 - 每个处理器$p_i$在无向图中表示为一个节点，出入度为$r_i$，处理器本身可以表示为状态集合为$Q_i$的状态机(_state machine_)，每个状态都有$2r$个特别的组件(_component_)，也就是为每个连接的通道准备一个$outbuf_i[l]$和一个$inbuf_i[l]$存放未处理报文。$Q_i$会包含一个特别初始状态(_initial states_)，在该状态下每一个$inbuf_i[l]$皆为空
 
-- 每个处理器有一个转换函数(_transition function_)，接收一个值作为$p_i$的一个可到达状态(_accessible state_)的输入，并且在__清空每一个$inbuf_i[l]$__之后产生一个值作为输出，同时在每个通道上产生__最多一个__待发送(_in transit_)报文（不会出现在接收方的$inbuf$中）
+- 每个处理器有一个转换函数(_transition function_)，接收一个值作为$p_i$的一个可到达状态(_accessible state_)的输入，并且在 __清空每一个$inbuf_i[l]$__ 之后产生一个值作为输出，同时在每个通道上产生 __最多一个__ 待发送(_in transit_)报文（不会出现在接收方的$inbuf$中）
 
 - 一个系统的配置(_Configuration_)是$C=\left(q_0,q_1,\dots,q_{n-1}\right)$由所有处理器的当前状态组成的，配置中的$outbuf$存放着所有待发送的报文，配置的初始状态由所有处理器的初始状态组成
 
@@ -48,7 +48,7 @@ tags:
   - _safety condition_: a condition that must hold in every finite prefix of the sequence $\rightarrow$ nothing bad has happened yet
   - _liveness condition_: a condition that must hold a certain number of times, possibly an infinite number of times $\rightarrow$ eventually something good happens
 
-  满足某个特定系统所有_safety condition_的序列才能称为执行，如果一个执行满足所有_liveness condition_就称为_admissible_
+  满足某个特定系统所有 _safety condition_ 的序列才能称为执行，如果一个执行满足所有 _liveness condition_ 就称为 _admissible_
 
 - 处理器包含终止状态(_terminated state_)，并且在该状态下转换函数始终指向终止状态。当一个系统（或者算法）终止的时候意味着所有的处理器都处在终止状态，并且已经没有待发送的报文
 

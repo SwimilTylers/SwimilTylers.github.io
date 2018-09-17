@@ -25,7 +25,7 @@ tags:
 
 - __Symmetry__: 节点顺序的改变不会影响整个系统的表现
 - __Equivalence Relation__:  所有等价关系的进程都运行着相同的代码，并且如果$p$等价于$p'$, 那么$p$的每一个近邻都等价于$p'$的每一个近邻
-- __Anonymous Ring__: 每一个进程都运行__相同__的代码的__环状__网络结构
+- __Anonymous Ring__: 每一个进程都运行 __相同__ 的代码的 __环状__ 网络结构
 - __Sense of Direction__: 如果一个节点能够分辨左右近邻，那么就可以通过距离最左侧的节点的距离来唯一的确定每一个节点
 - __Symmetry Breaking__: 偏离初始对称配置的message-passing system。打破对称性可以通过让每个节点进行随机选择，以一定的概率打破原先的对称性配置，但是这种方法不能保证收敛到唯一一个leader；或者为每个节点设置身份标识，只需申明身份就能打破对称性。
 - ___Lemma 1.1___ : A symmetric deterministic message-passing system that starts in an initial configuration in which equivalent processes have the same state has a synchronous execution in which equivalent processes continue to have the same state.
