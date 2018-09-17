@@ -1,5 +1,6 @@
 ---
 layout:     post
+mathjax:  true
 title:      "Distributed Algorithm Basics (IV) - Scenario: leader election"
 subtitle:   "Notes on DA study"
 date:       2018-09-10 17:20:15
@@ -11,6 +12,7 @@ tags:
     - Le-Lann-Chang-Roberts
     - Hirschberg-Sinclair
     - Peterson
+    - Lower Bound
     - Notes
 ---
 

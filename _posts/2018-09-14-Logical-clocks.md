@@ -1,5 +1,6 @@
 ---
 layout:     post
+mathjax:  true
 title:      "Distributed Algorithm Basics (V) - Scenario: Logical Clock"
 subtitle:   "Notes on DA study"
 date:       2018-09-14 19:08:40
@@ -31,8 +32,9 @@ __causal shuffle__: causal shuffle of a schedule $S$ is a permutation of $S$ tha
 
 ___Lemma 1___: Let $S'$ be a permutation of the events in $S$. Then, the following statements are equivalent:
 
- 	1. $S'$ is a causal shuffle of $S$ 
-	2. $S'$ is the schedule of an execution fragment of a message-passing system with $\forall p\rightarrow S|p=S'|p$
+1. $S'$ is a causal shuffle of $S$ 
+
+2. $S'$ is the schedule of an execution fragment of a message-passing system with $\forall p\rightarrow S|p=S'|p$
 
 In general, we will have a relation $<_L$ between timestamps such that $e\Rightarrow_S e'$ implies $e<_L e'$, but it may be that there are some pairs of events that are ordered by the logical clock despite being incomparable in the happens-before relation.
 

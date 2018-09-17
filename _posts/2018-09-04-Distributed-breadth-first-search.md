@@ -1,5 +1,6 @@
 ---
 layout:     post
+mathjax:  true
 title:      "Distributed Algorithm Basics (III) - Distributed BFS"
 subtitle:   "Notes on DA study"
 date:       2018-09-04 11:40:05
@@ -9,6 +10,7 @@ tags:
     - Distributed Algorithm
     - BFS tree
     - Synchronizer
+    - MST
     - Notes
 ---
 

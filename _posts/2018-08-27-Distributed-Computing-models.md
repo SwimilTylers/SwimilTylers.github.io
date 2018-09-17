@@ -1,5 +1,6 @@
 ---
 layout:     post
+mathjax:  true
 title:      "Distributed Algorithm Basics (I) - Models"
 subtitle:   "Notes on DA study"
 date:       2018-08-27 16:07:10

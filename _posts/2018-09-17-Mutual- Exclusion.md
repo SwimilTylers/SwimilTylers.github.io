@@ -9,6 +9,7 @@ header-img: "img/home-bg-o.jpg"
 tags:
     - Distributed Algorithm
     - Mutual Exclusion
+    - Lower Bound
     - Notes
 ---
 
@@ -67,7 +68,7 @@ while (true){
 
 ### Read-Modify-Write Registers
 
-上述的算法无法保证lockout-free，为了确保这种特性，我们需要一个可以支持原则操作的共享队列(_atomic shared queue_)。再尝试阶段的时候，每个处理器将自己加入(_enqueue_)这个共享队列的尾部。对于这个队列来说，每次去取其头部的处理器，允许他进入保护阶段，而对于其他处理器来说就需要不停的访问队列是否轮到了他（这个方式叫做_spinning_）当一个进入保护阶段的处理器退出的时候，队列也随之弹出(_dequeue_)
+上述的算法无法保证lockout-free，为了确保这种特性，我们需要一个可以支持原则操作的共享队列(_atomic shared queue_)。再尝试阶段的时候，每个处理器将自己加入(_enqueue_)这个共享队列的尾部。对于这个队列来说，每次去取其头部的处理器，允许他进入保护阶段，而对于其他处理器来说就需要不停的访问队列是否轮到了他（这个方式叫做 _spinning_ ）当一个进入保护阶段的处理器退出的时候，队列也随之弹出(_dequeue_)
 
 ```c
 /*
@@ -158,12 +159,12 @@ Initially _Number_[i] = 0 and _Choosing_[i] = false for all i
 + _mutual exclusion_：
   + 当处理器$p_i$进入critical section，对于$k\neq i,Number[k]\neq 0$满足$\left(Number[k],k\right)>\left(Number[i],i\right)$
   + 当$p_i$进入critical section的时候，$Number[i]>0$
-  + 如果有两个处理器$p_i$和$p_j$同时进入critical section，那么$Number[i]\neq0\and Number[j]\neq0$，并且$\left(Number[j],j\right)>\left(Number[i],i\right)\and \left(Number[k],k\right)<\left(Number[i],i\right)$矛盾，因此不会同时有两个处理器进入critical section
+  + 如果有两个处理器$p_i$和$p_j$同时进入critical section，那么$Number[i]\neq0\wedge Number[j]\neq0$，并且$\left(Number[j],j\right)>\left(Number[i],i\right)\wedge\left(Number[k],k\right)<\left(Number[i],i\right)$矛盾，因此不会同时有两个处理器进入critical section
 + _no deadlock_ and _no lockout_：反设存在一个处理器$p_i$，其ticket是饥饿处理器中最小的。由于选取ticket的过程不会出现阻隔，因此在$p_i$之后获得的ticket都比$p_i$的大，因此这些处理器不会早于$p_i$进入critical section。当所有比$\mathrm{ticket}(p_i)$小的处理器进入critical section（这些处理器并未饥饿）并且退出，这个时候$p_i$就能够进入critical section，这与$p_i$出现饥饿矛盾
 
 ### Bounded Mutual Exclusion Algorithm for $2$ processors
 
-首先是一个简单的**双处理器**互斥算法，保证了_mutual exclusion_和_no deadlock_特性。但是由于该算法$p_0$的优先级高于$p_1$，因此可能造成饥饿。
+首先是一个简单的**双处理器**互斥算法，保证了_mutual exclusion_和_no deadlock_特性。但是由于该算法$p_0​$的优先级高于$p_1​$，因此可能造成饥饿。
 
 ```pseudocode
 Initially _Want_[0] and _Want_[1] are 0

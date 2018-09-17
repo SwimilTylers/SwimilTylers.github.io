@@ -1,5 +1,6 @@
 ---
 layout:     post
+mathjax:  true
 title:      "Distributed Algorithm Basics (II) - Broadcast and Converge-cast"
 subtitle:   "Notes on DA study"
 date:       2018-09-01 09:10:10
@@ -9,6 +10,7 @@ tags:
     - Distributed Algorithm
     - Flooding
     - Converge-cast
+    - MST
     - Notes
 ---
 
