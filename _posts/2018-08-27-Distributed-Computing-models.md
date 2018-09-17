@@ -12,7 +12,7 @@ tags:
     - Notes
 ---
 
-> 这是分布式算法笔记的第一章，讲述两个基础的分布式计算的理论模型
+> 这是分布式算法笔记的第一章，讲述两个基础的分布式计算的理论模型。
 
 新的一学期，导师想让我了解一下Paxos，因此让我先入门一下分布式算法，打一下基础，入门的书选择的是
 
@@ -60,7 +60,7 @@ tags:
 + In the asynchronous model, an execution is _admissible_ if each processor has an infinite number of computation events and every message sent is eventually delivered $\rightarrow$ processors do not fail; It does not imply that local program must loop infinitely, but have the transition function not change the processor's state (_dummy steps_).
 + 同一个算法在一个非同步MP系统实际可能有很多不同的执行序列
 
-###Synchronous MP System
+### Synchronous MP System
 
 + 执行被划分为多个轮次(_round_)，在每个轮次中，每个处理器可以给每个邻居发送一个报文，并且这些报文被及时发送，基于这些报文进行运算的处理器都能够接受到所需报文。严格地说，执行可以被划分为互不相交(_disjoint_)的轮次，囊括了：1）每一个$outbuf$中的报文对应的发送事件；2）每一个$outbuf$被清空；3）每个处理器的计算事件。
 + In the synchronous model, an execution is _admissible_ if it is infinite.
@@ -74,7 +74,6 @@ tags:
   + 每个事件的起始时间都可以通过一个非负实数表示
   + 整个执行的时间起点为0并且不会下降，无限执行的时间的增长不存在上限
   + 对于每个处理器都是严格单增的
-
 
 ## Shared memory system
 
