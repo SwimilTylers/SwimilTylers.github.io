@@ -11,6 +11,7 @@ tags:
     - Flooding
     - Converge-cast
     - MST
+    - Message-Passing model
     - Notes
 ---
 

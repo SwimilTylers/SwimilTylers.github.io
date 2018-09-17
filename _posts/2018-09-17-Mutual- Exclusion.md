@@ -9,6 +9,7 @@ header-img: "img/home-bg-o.jpg"
 tags:
     - Distributed Algorithm
     - Mutual Exclusion
+    - Shared Memory model
     - Lower Bound
     - Notes
 ---
@@ -91,7 +92,7 @@ while (true){
 }
 ```
 
-RMW寄存器保存两个值，_first_和_last_， 近队列的时候增加_last_，选取进程的时候增加_first_，而进程自己检查当前队列头是否相同于近队列时候拿到的ticket。当_first_等于_last_的时候，整个critical section control暂停直到新的进程需要进入。$\mathrm{enq}$和$\mathrm{deq}$操作都是通过RWM寄存器操作，$\mathrm{head}$操作是通过普通读(_Read_)实现。
+RMW寄存器保存两个值， _first_ 和 _last_ ， 近队列的时候增加 _last_ ，选取进程的时候增加 _first_ ，而进程自己检查当前队列头是否相同于近队列时候拿到的ticket。当 _first_ 等于 _last_ 的时候，整个critical section control暂停直到新的进程需要进入。$\mathrm{enq}$和$\mathrm{deq}$操作都是通过RWM寄存器操作，$\mathrm{head}$操作是通过普通读(_Read_)实现。
 
 #### 复杂度
 

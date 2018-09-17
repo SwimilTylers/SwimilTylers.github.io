@@ -9,6 +9,7 @@ header-img: "img/home-bg-o.jpg"
 tags:
     - Distributed Algorithm
     - BFS tree
+    - Message-Passing model
     - Synchronizer
     - MST
     - Notes

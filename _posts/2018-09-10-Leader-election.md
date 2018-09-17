@@ -1,7 +1,7 @@
 ---
 layout:     post
 mathjax:  true
-title:      "Distributed Algorithm Basics (IV) - Scenario: leader election"
+title:      "Distributed Algorithm Basics (IV) - Scenario: Leader Election"
 subtitle:   "Notes on DA study"
 date:       2018-09-10 17:20:15
 author:     "swimiltylers"
@@ -9,6 +9,7 @@ header-img: "img/home-bg-o.jpg"
 tags:
     - Distributed Algorithm
     - Leader election
+    - Message-Passing model
     - Le-Lann-Chang-Roberts
     - Hirschberg-Sinclair
     - Peterson

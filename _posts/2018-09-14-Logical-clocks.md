@@ -10,6 +10,7 @@ tags:
     - Distributed Algorithm
     - Synchronize
     - logical clock
+    - Message-Passing model
     - Lamport
     - Neiger-Toueg-Welch
     - Vector clock
