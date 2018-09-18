@@ -37,6 +37,9 @@ __Configuration__: unidirectional ring, nodes with identities, not necessarily s
 
 __Complexity__: $O(n^2)$ messages and $O(n)$ time
 
++ 时间复杂度比较简单
++ LCR算法允许非同步的展开，但是为了更好的计算复杂度，我们不妨考虑在同步环境下的情况。我们可以看到，在每一轮的发送之后，最少有一个处理器会被淘汰，因此，求和得到整体的报文复杂度就是$n+(n-1)+\dots+1=O(n^2)$
+
 ```pseudocode
 Class node:
 	Procedure initialize(assigned_id) :
@@ -61,6 +64,9 @@ End Class
 __Configuration__: unidirectional ring, nodes with identities, not necessarily synchronous
 
 __Complexity__: $O(n\log n)$ messages and $O(n)$ time
+
++ 我们将HS算法完成的运行时间段分成多个阶段(_phase_)，每个阶段内的跳跃(_hop_)距离都相同，第$k$个阶段内的距离是$2^k$。最多有$\log n$个阶段，因此时间复杂度$\sum_{k=1}^{\log n}2^k=O(2^{\log n})=O(n)$
++ 同理，在第$k$个阶段，能起始发送报文的处理器需要是第$k-1$阶段胜出的处理器，也就是说有$\frac{n}{2^{k-1}}$起始处理器。报文复杂度是$\sum_{k=1}^{\log n}2^k\frac{n}{2^{k-1}}=O(n\log n)$
 
 __Improvement__: [LRC] each process probe locally: double range when locally max, otherwise drop out
 
@@ -129,11 +135,9 @@ __Complexity__: $O(n\log n)$ messages and $O(n)$ time
 
 ## Randomized $O(n\log n)$-message Algorithm
 
-__Argument__: the $i$-th largest id only propagates an expected $n/i$ hops -> $O(nH_n)=O(n\log n)$ hops in total.
+这个算法本身是将LCR算法进行随机化处理(_Randomization_)，从而减少报文复杂度的期望。在运行的时候，在原有的标签(_id_)前面附着(_prepend_)足够长度的随机字节串。这样，每个增益标签都是唯一的并且非常类似于随机排列(_permutation_)，因此我们可以得到第 $i$个最大的原标签只会平均传播$n/i$跳，因此总计$O(nH_n)=O(n\log n)$跳。
 
-__Improvement__: Run LCR where each id is constructed by prepending a long random bit-string to the real id. -> something close to a random permutation on the constructed id's
-
-__Backwards__: 相较于Peterson算法，随机化算法需要提前知道$n$的大小，从而确定随机标签的范围，此外其message的字长比较大
+但是，相较于Peterson算法，随机化算法需要提前知道$n$的大小，从而确定随机标签的范围，此外其报文的字长比较大，单个报文的bits比较多。
 
 ## Lower bounds for message complexity
 
