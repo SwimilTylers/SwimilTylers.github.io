@@ -37,7 +37,7 @@ tags:
 1. 基本概念
    + 字母表：有限的符号集合，ASCII
    + 串：字母表中的符号构成的__有穷__序列
-     + 串$s$的长度$|s|$
+     + $s$的长度$\mid s\mid$
      + 空串$\varepsilon$，长度为0的串
      + （真）前缀，（真）后缀，（真）字串，子序列
      + 连接运算(_concatenation_)，指数运算
@@ -49,7 +49,7 @@ tags:
 2. 正则表达式
    + 定义
      + $\varepsilon$是一个正则表达式
-     + 优先级从低到高：选择($r|s$)，连接($rs$)，闭包($r^*$)，括号($\left(r\right)$)
+     + 优先级从低到高：选择($r\mid s$)，连接($rs$)，闭包($r^*$)，括号($\left(r\right)$)
      + 扩展运算符：一个或多个($r^+$)，零个或一个($r?$)，字符类($\left[abc\right],\,\left[a-z\right]$)
    + 性质
      + 等价性：如果两个正则表达式表示相同的语言，则这两个表达式等价
@@ -105,7 +105,7 @@ tags:
       A(A)-->|r|B(B)
       ```
 
-   2. $r=s|t$
+   2. $r=s\mid t$
 
       ```mermaid
       graph LR
@@ -159,7 +159,7 @@ tags:
    + 可区分：如果分别从$s$和$t$出发，存在某个路径，沿着该路径到达的两个状态只有一个是接受状态
    + 划分算法
      1. 设置初始化分$\Pi=\{S-F,F\}$，$F$表示结束状态的集合。如果是多个不同的结束状态，那么就将相同结论(_output_)的结束状态划分为同一组
-     2. 迭代，更新划分$\Pi'=\big[\left[\mathrm{G.splitIf}\left(\exist a\in\Sigma\and \mathrm{though\,}a\,\mathrm{reach\,} s\notin \mathrm{G}\right)\right]\mathrm{for\,each\,G\, in\,}\Pi\big]$，直到$\Pi^{k+1}=\Pi^{k}$收敛，此时记为$\Pi_{\mathrm{final}}$
+     2. 迭代，更新划分$\Pi'=\big[\left[\mathrm{G.splitIf}\left(\exists a\in\Sigma\wedge\mathrm{though\,}a\,\mathrm{reach\,} s\notin \mathrm{G}\right)\right]\mathrm{for\,each\,G\, in\,}\Pi\big]$，直到$\Pi^{k+1}=\Pi^{k}$收敛，此时记为$\Pi_{\mathrm{final}}$
      3. 在$\Pi_{\mathrm{final}}$中选出分组的代表
         + 有开始状态或者结束状态的，将其中一个开始/结束状态作为代表
         + 如果$r$是某个组$G$的代表，假设原DFA中如果存在一条边$a$到达$s$，如果$s$所在的组$H$代表为$t$，那么新DFA中就存在从$r$到$t$在输入$a$上的转换
