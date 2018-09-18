@@ -169,7 +169,7 @@ ___Proof___:
 
 __BASIC IDEA__:
 
-+ _order-equivalent_: for two fragment $i\dots i+k$ and $j\dots j+k$, $\forall b = 0\dots k,$$\;$$\mathrm{id}_{i+a}>\mathrm{id}_{i+b}$ $\;\Leftrightarrow\;$$\mathrm{id}_{j+a}>\mathrm{id}_{j+b}$
++ _order-equivalent_: for two fragment $i\dots i+k$ and $j\dots j+k, \;\forall b = 0\dots k,\;\mathrm{id}_{i+a}>\mathrm{id}_{i+b}\;\Leftrightarrow\;\mathrm{id}_{j+a}>\mathrm{id}_{j+b}$
 + _similar_: executions of $p_1$ and $p_2$ is similar if both processes send messages in the same direction(s) in the same rounds and both processes declare themselves leader (or not) at the same round.
 + _full-information protocol_: each message is replaced by the ID and a complete history of the sending process, including all messages it has ever received.
 + _comparison-based_: the algorithm can only copy IDs and test for $<$. The state of such an algorithm is modeled by 1) some non-ID state + a big bag of IDs, 2) messages have a pile of IDs attached to them, etc.. Two states are equivalent under some mapping of IDs if you can translate the first to the second by running all IDs through the mapping.
