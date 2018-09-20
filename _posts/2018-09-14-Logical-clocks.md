@@ -1,7 +1,7 @@
 ---
 layout:     post
 mathjax:  true
-title:      "Distributed Algorithm Basics (V) - Scenario: Logical Clock"
+title:      "Distributed Algorithm Basics (V) - Logical Clock"
 subtitle:   "Notes on DA study"
 date:       2018-09-14 19:08:40
 author:     "swimiltylers"

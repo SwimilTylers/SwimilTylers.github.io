@@ -1,7 +1,7 @@
 ---
 layout:     post
 mathjax:  true
-title:      "Distributed Algorithm Basics (VI) - Scenario: Mutual Exclusion"
+title:      "Distributed Algorithm Basics (VI) - Mutual Exclusion"
 subtitle:   "Notes on DA study"
 date:       2018-09-17 21:18:00
 author:     "swimiltylers"
