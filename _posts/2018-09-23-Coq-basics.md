@@ -23,19 +23,19 @@ tags:
 
 ```coq
 Inductive day : Type :=
-  | monday : day
-  | tuesday : day
-  | wednesday : day
-  | thursday : day
-  | friday : day
-  | saturday : day
-  | sunday : day.
+| monday : day
+| tuesday : day
+| wednesday : day
+| thursday : day
+| friday : day
+| saturday : day
+| sunday : day.
 ```
 
 ```coq
 Inductive bool : Type :=
-  | true : bool
-  | false : bool.
+| true : bool
+| false : bool.
 ```
 
 枚举的Data Type可以直接通过枚举所有的构造器(_constructor_)来确定，构造器的语法类似于函数的定义，在按照`[cons_name]: [intype_1 ->...->outtype]`的形式进行定义，一般来说枚举类型的构造器是无输入类型。尽管表达形式类似函数，但是实际上只是数据的一种标记方式，在内存中直接以构造器的形式进行存储。
@@ -46,14 +46,14 @@ Coq's conditionals are exactly like those found in any other language, with one 
 
 ```coq
 Inductive rgb : Type :=
-  | red : rgb
-  | green : rgb
-  | blue : rgb.
+| red : rgb
+| green : rgb
+| blue : rgb.
 
 Inductive color : Type :=
-  | black : color
-  | white : color
-  | primary : rgb → color.
+| black : color
+| white : color
+| primary : rgb → color.
 ```
 
 ### Natural Number
@@ -80,24 +80,24 @@ Fixpoint允许递归的调用本身，但是这种调用必须是一种有界的
 
 ```coq
 Fixpoint plus (n : nat) (m : nat) : nat :=
-  match n with
-    | O ⇒ m
-    | S n' ⇒ S (plus n' m)
-  end.
+match n with
+| O ⇒ m
+| S n' ⇒ S (plus n' m)
+end.
 ```
 
 ```coq
 Fixpoint beq_nat (n m : nat) : bool :=
-  match n with
-  | O ⇒ match m with
-         | O ⇒ true
-         | S m' ⇒ false
-         end
-  | S n' ⇒ match m with
-            | O ⇒ false
-            | S m' ⇒ beq_nat n' m'
-            end
-  end.
+match n with
+| O ⇒ match m with
+	| O ⇒ true
+    | S m' ⇒ false
+    end
+| S n' ⇒ match m with
+	| O ⇒ false
+    | S m' ⇒ beq_nat n' m'
+    end
+end.
 ```
 
 
@@ -125,17 +125,14 @@ Proof.
 #### 重写
 
 ```coq
-Theorem plus_id_example : forall n m:nat,
-  n = m ->
-  n + n = m + m.
+Theorem plus_id_example : forall n m:nat,	n = m -> n + n = m + m.
 Proof.
-  (* move both quantifiers into the context: *)
-  intros n m.
-  (* move the hypothesis into the context: *)
-  intros H.
-  (* rewrite the goal using the hypothesis: *)
-  rewrite -> H.
-  reflexivity. Qed.
+	(* move both quantifiers into the context: *)
+	intros n m.
+    (* move the hypothesis into the context: *)
+    intros H.
+    (* rewrite the goal using the hypothesis: *)
+    rewrite -> H. reflexivity. Qed.
 ```
 
 重写(_rewriting_)指的是，在证明的过程中，按照给出的前提假设(_Hypothesis_)，在要证明的式子两边对变量进行改写，辅助证明。`->`表示的意思是使用前提假设的右侧替换左侧，`<-`表示左侧替换右侧。对于上面的证明过程，我们无法指出所有可能的取值，因此证明的时候无法进行相应的确切的化简，因此需要改写变量满足假设进行证明，该重写过程就是`n + n = m + m (*-->*) m + m = m + m `
@@ -145,21 +142,19 @@ Proof.
 #### 构造器析构
 
 ```coq
-Theorem surjective_pairing : ∀ (p : natprod),
-  p = (fst p, snd p).
+Theorem surjective_pairing : forall (p : natprod), p = (fst p, snd p).
 Proof.
-  intros p. destruct p as [n m]. simpl. reflexivity. Qed.
+	intros p. destruct p as [n m]. simpl. reflexivity. Qed.
 ```
 
 #### 分类讨论
 
 ```coq
-Theorem plus_1_neq_0 : forall n : nat,
-  beq_nat (n + 1) 0 = false.
+Theorem plus_1_neq_0 : forall n : nat,  beq_nat (n + 1) 0 = false.
 Proof.
-  intros n. destruct n as [| n'].
-  - reflexivity.
-  - reflexivity. Qed.
+	intros n. destruct n as [| n'].
+	- reflexivity.
+    - reflexivity. Qed.
 ```
 
 可以简写成
@@ -184,9 +179,9 @@ Proof.
 ```coq
 Theorem plus_n_O : forall n:nat, n = n + 0.
 Proof.
-  intros n. induction n as [| n' IHn'].
-  - (* n = 0 *) reflexivity.
-  - (* n = S n' *) simpl. rewrite <- IHn'. reflexivity. Qed.
+	intros n. induction n as [| n' IHn'].
+    - (* n = 0 *) reflexivity.
+    - (* n = S n' *) simpl. rewrite <- IHn'. reflexivity. Qed.
 ```
 
 那上述的证明来说明，$n$可以是任意大的自然数，如果按照分情况讨论的话，可能会一直化简下去，并不能验证任意大小的$n$。这种情况下，使用类似于数学归纳法进行证明，即`induction`，归纳证明命题的正确性。
@@ -198,16 +193,15 @@ Proof.
 #### 行间证明
 
 ```coq
-Theorem mult_0_plus' : forall n m : nat,
-  (0 + n) * m = n * m.
+Theorem mult_0_plus' : forall n m : nat,  (0 + n) * m = n * m.
 Proof.
-  intros n m.
-  assert (H: 0 + n = n). { reflexivity. }
-  rewrite → H.
-  reflexivity. Qed.
+	intros n m.
+    assert (H: 0 + n = n). { reflexivity. }
+    rewrite → H.
+    reflexivity. Qed.
 ```
 
-如果在证明的过程中需要加入临时的、显而易见的中间引理证明，那么可以考虑`assert`进行证明内的小引理证明(_sub-theorem_)。`assert`这种方式引入了两个子目标，第一个便是断言(_assertion_)本身（在上述的论证中，断言被命名为$H$，指的是$0 + n = 0$），这个子目标的论证囊括在大括号$\{\dots\}$中。另一个子目标就是在既有断言基础上进行原先的论证，通常也是通过重写来完成。
+如果在证明的过程中需要加入临时的、显而易见的中间引理证明，那么可以考虑`assert`进行证明内的小引理证明(_sub-theorem_)。`assert`这种方式引入了两个子目标，第一个便是断言(_assertion_)本身（在上述的论证中，断言被命名为$H​$，指的是$0 + n = 0​$），这个子目标的论证囊括在大括号$\{\dots\}​$中。另一个子目标就是在既有断言基础上进行原先的论证，通常也是通过重写来完成。
 
 断言的方式主要是提供一种类似于匿名函数的功能。
 
