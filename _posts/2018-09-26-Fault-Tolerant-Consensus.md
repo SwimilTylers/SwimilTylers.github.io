@@ -3,7 +3,7 @@ layout:     post
 mathjax:  true
 title:      "Distributed Algorithm Basics (VIII) -  Fault-Tolerant Consensus"
 subtitle:   "Notes on DA study"
-date:       2018-09-20 22:01:49
+date:       2018-09-26 19:57:49
 author:     "swimiltylers"
 header-img: "img/home-bg-o.jpg"
 tags:
