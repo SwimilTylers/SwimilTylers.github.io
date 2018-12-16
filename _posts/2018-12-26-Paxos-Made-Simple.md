@@ -69,11 +69,12 @@ Learner是获知当前共识的对象，通常只需要指定一个地位特殊(
 
       2. $S\rightarrow n\;(\mid S\mid\geq N/2)$ 
 
-      3. **[*Quorum*.]** $C\cap S\neq\varnothing\Rightarrow \max\{n_v\mid\left<n_{\max},v,n_v\right>\in S\}\geq m$
+      3. **[*Quorum*.]** $C\cap S\neq\varnothing\Rightarrow \max\left\{n_v\mid\left<n_{\max},v,n_v\right>\in S\right\}\geq m$
       4. 根据算法(**P2.c**)，我们得到标号为$n$的proposal对应的$v_n=v_m$
 
-    $\Box​$
+    $\Box$
 
 ## Application
 
 - Replicated State Machine
+
