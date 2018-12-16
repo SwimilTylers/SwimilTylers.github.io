@@ -3,7 +3,7 @@ layout:     post
 mathjax:  true
 title:      "Distributed Algorithm Basics (VI) - Mutual Exclusion"
 subtitle:   "Notes on DA study"
-date:       2018-09-17 21:18:00
+date:       2018-11-02 21:18:00
 author:     "swimiltylers"
 header-img: "img/home-bg-o.jpg"
 tags:

@@ -3,7 +3,7 @@ layout:     post
 mathjax:  true
 title:      "Principle of Complier (I) - Lexical Analysis"
 subtitle:   "Notes on Principle of Compiler"
-date:       2018-09-18 15:00:31
+date:       2018-11-10 15:00:31
 author:     "swimiltylers"
 header-img: "img/post-bg-re-vs-ng2.jpg"
 tags:

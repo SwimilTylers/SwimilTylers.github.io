@@ -3,7 +3,7 @@ layout:     post
 mathjax:  true
 title:      "Distributed Algorithm Basics (II) - Broadcast and Converge-cast"
 subtitle:   "Notes on DA study"
-date:       2018-09-01 09:10:10
+date:       2018-09-10 09:10:10
 author:     "swimiltylers"
 header-img: "img/home-bg-o.jpg"
 tags:

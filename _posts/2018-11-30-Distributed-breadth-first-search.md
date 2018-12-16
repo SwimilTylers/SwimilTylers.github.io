@@ -3,7 +3,7 @@ layout:     post
 mathjax:  true
 title:      "Distributed Algorithm Basics (III) - Distributed BFS"
 subtitle:   "Notes on DA study"
-date:       2018-09-04 11:40:05
+date:       2018-11-30 11:40:05
 author:     "swimiltylers"
 header-img: "img/home-bg-o.jpg"
 tags:

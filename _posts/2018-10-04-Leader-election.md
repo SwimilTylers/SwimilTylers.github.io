@@ -3,7 +3,7 @@ layout:     post
 mathjax:  true
 title:      "Distributed Algorithm Basics (IV) - Scenario: Leader Election"
 subtitle:   "Notes on DA study"
-date:       2018-09-10 17:20:15
+date:       2018-10-04 17:20:15
 author:     "swimiltylers"
 header-img: "img/home-bg-o.jpg"
 tags:

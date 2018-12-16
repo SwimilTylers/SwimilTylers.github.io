@@ -3,7 +3,7 @@ layout:     post
 mathjax:  true
 title:      "Distributed Algorithm Basics (VII) - Scenario: Coordinated Attack"
 subtitle:   "Notes on DA study"
-date:       2018-09-20 22:01:49
+date:       2018-11-24 22:01:49
 author:     "swimiltylers"
 header-img: "img/home-bg-o.jpg"
 tags:

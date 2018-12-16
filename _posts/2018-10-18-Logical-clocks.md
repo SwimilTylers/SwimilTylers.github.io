@@ -3,7 +3,7 @@ layout:     post
 mathjax:  true
 title:      "Distributed Algorithm Basics (V) - Logical Clock"
 subtitle:   "Notes on DA study"
-date:       2018-09-14 19:08:40
+date:       2018-10-18 19:08:40
 author:     "swimiltylers"
 header-img: "img/home-bg-o.jpg"
 tags:
